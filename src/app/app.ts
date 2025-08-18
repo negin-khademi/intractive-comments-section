@@ -2,6 +2,7 @@ import { Component, signal } from "@angular/core";
 
 import { ButtonModule } from "primeng/button";
 import { CommentCard } from "./comment-card/comment-card";
+import { Comments } from "./comments";
 import { RouterOutlet } from "@angular/router";
 
 @Component({
@@ -12,4 +13,10 @@ import { RouterOutlet } from "@angular/router";
 })
 export class App {
   protected readonly title = signal("intractive-comments-section");
+  constructor(private commentsService: Comments) {}
+
+  ngOnInit() {
+    const data = this.commentsService.commentList();
+    console.log("here", data);
+  }
 }

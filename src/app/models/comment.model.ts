@@ -1,5 +1,16 @@
-import { Reply } from "./reply.model";
-import { User } from "./user.model";
+export interface User {
+  image: { png: string; webp: string };
+  username: string;
+}
+
+export interface Reply {
+  id: number;
+  content: string;
+  createdAt: string;
+  score: number;
+  replyingTo?: string;
+  user: User;
+}
 
 export interface Comment {
   id: number;
@@ -7,5 +18,10 @@ export interface Comment {
   createdAt: string;
   score: number;
   user: User;
-  replies: Reply[]; // replies can exist only inside a comment
+  replies: Reply[];
+}
+
+export interface CommentsData {
+  currentUser: User;
+  comments: Comment[];
 }

@@ -1,8 +1,9 @@
 <main>
-  <p-button label="Check" />
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <!-- Inside comment-card.component.html -->
+  <div class="ml-6 border-l pl-6 mt-4 space-y-4">
+    <app-comment-card *ngFor="let reply of comment.replies" [comment]="reply"></app-comment-card>
+  </div>
+
 </main>
 
 

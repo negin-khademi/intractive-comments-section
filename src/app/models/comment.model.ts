@@ -21,7 +21,7 @@ export interface Comment {
   replies: Reply[];
 }
 
-export interface CommentsData {
+export interface CommentsDataModel {
   currentUser: User;
   comments: Comment[];
 }

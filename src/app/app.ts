@@ -13,10 +13,11 @@ import { RouterOutlet } from "@angular/router";
 })
 export class App {
   protected readonly title = signal("intractive-comments-section");
+  commentsData: any = {};
   constructor(private commentsService: Comments) {}
 
   ngOnInit() {
-    const data = this.commentsService.commentList();
-    console.log("here", data);
+    this.commentsData = this.commentsService.commentList().comments;
+    console.log("here", this.commentsData);
   }
 }

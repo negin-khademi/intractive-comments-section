@@ -1,7 +1,9 @@
 <main>
   <!-- Inside comment-card.component.html -->
-  <div class="ml-6 border-l pl-6 mt-4 space-y-4">
-    <app-comment-card></app-comment-card>
+  <div class=" border-l pl-6 mt-4 space-y-4">
+    @for (item of commentsData; track $index) {
+    <app-comment-card [comment]="item" />
+    }
   </div>
 
 </main>
